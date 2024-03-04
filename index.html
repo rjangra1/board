@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./css/background.css">
+<link rel="stylesheet" href="./css/frame.css">
+</head>
+<style>
+*, *:before, *:after {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+html {font-size: 16px;user-select: none;cursor: none;}
+body {
+	position: absolute;
+	margin: auto;
+	overflow: hidden;
+    user-select: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: rc, Tahoma, Verdana;
+	background-color: #000;
+	color: #fff;
+	font-size: 1rem;
+	width: 100%;
+	height: 100%;
+}
+
+.p-absolute {position: absolute;}
+.p-top {top: 0;}
+.p-bottom {bottom: 0;}
+.p-left {left: 0;}
+.p-right {right: 0;}
+.p-bottom-1 {bottom: 1rem;}
+.overlay {position: absolute;top: 0;left: 0;height: 100%;width: 100%;}
+.hiddenDiv {width: 100px;height: 100px;}
+</style>
+<body>
+	<div id="outer-frame" class="p-absolute op-1">
+		<div id="mid-frame" class="p-absolute mid-border-0">
+			<div id="back-drop" class="overlay blur"></div>
+			<div id="background" class="overlay inner-border-color-3 inner-border-shadow-1"></div>
+		</div>
+	</div>
+	<div id="control-panel" class="overlay p-right">
+		<div class="p-absolute hiddenDiv p-left">&nbsp;</div>
+		<div class="p-absolute hiddenDiv p-right" onclick="refreshPage()">&nbsp;</div>
+		<div class="p-absolute hiddenDiv p-left p-bottom">&nbsp;</div>
+		<div class="p-absolute hiddenDiv p-right p-bottom" onclick="changeBackGround()">&nbsp;</div>
+	</div>
+</body>
+	<script>
+		function refreshPage() {
+			window.location.reload(true);
+		}
+	</script>
+	<script src="./js/slideshow.js"></script>
+</html>
+
+
